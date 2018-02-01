@@ -1,0 +1,31 @@
+{{#app-header}}
+  {{#link-to 'create' (query-params date = selectDate
+                                    timeStart=""
+                                    timeEnd=""
+                                    roomId = "")
+                                    class="button button-blue"}}
+    Создать встречу
+  {{/link-to}}
+{{/app-header}}
+{{app-calendar-home class="date-and-time-calendar-mobile"
+               selectDate = selectDate
+               setSelectDate = ( action 'setSelectDate')}}
+<div class="index"
+     ontouchstart = {{ action 'initTouchStart' }}
+     ontouchmove = {{ action 'initTouchMove'}}
+     ontouchend = {{ action 'initTouchEnd'}}>
+  <div id="scrollable-mobile" class=" {{if mobileSwipe 'scrollable-element'}}">
+    <div class="index__date-and-time">
+      {{app-calendar-home class="date-and-time-calendar-desctop"
+                     selectDate = selectDate
+                     setSelectDate = ( action 'setSelectDate')}}
+      {{app-time-scale class="date-and-time-scaleTime"}}
+    </div>
+    <div class="index__rooms-and-events">
+      {{app-rooms selectDate = selectDate
+                  rooms = model.rooms
+                  mobileSwipe = mobileSwipe
+                  leftTitle = leftTitle}}
+    </div>
+  </div>
+</div>

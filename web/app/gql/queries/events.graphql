@@ -1,0 +1,20 @@
+query events{
+  events{
+    id
+    title
+    dateStart
+    dateEnd
+    users{
+      id
+      login
+      homeFloor
+      avatarUrl
+    }
+    room{
+      id
+      title
+      capacity
+      floor
+    }
+  }
+}

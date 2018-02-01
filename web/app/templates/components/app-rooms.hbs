@@ -1,0 +1,28 @@
+<div class="app-rooms-and-events">
+  <div class="app-rooms-and-events__rooms">
+    {{#each-in rooms as |floor items|}}
+      <div class="rooms__floor">
+        {{floor}} этаж
+      </div>
+      {{#each items as |room|}}
+        {{app-event-in-room class="rooms__info"
+                            title = room.title
+                            capacity = room.capacity
+                            eventsInRoom =(unless ( get events room.id ) eventsEmpty (get events room.id))
+                            roomId = room.id
+                            selectDate = selectDate
+                            mobileSwipe = mobileSwipe
+                            leftTitle = leftTitle}}
+      {{/each}}
+    {{/each-in}}
+  </div>
+
+  <div class="app-rooms-and-events__time-grid">
+    {{app-timer class="time-grid-timer" selectDate = selectDate}}
+    {{#each arrayTime as | cellGrid|}}
+      <div class="time-grid-cell">
+      </div>
+    {{/each}}
+    {{app-loader visible = visibleLoader}}
+  </div>
+</div>

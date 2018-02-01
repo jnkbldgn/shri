@@ -1,0 +1,111 @@
+.app-calendar-main
+  &__close
+    position: absolute;
+    right: 8px;
+    top: 9px;
+
+  &__months
+    display: none;
+    overflow: hidden;
+    height: 0px
+    padding 0 24px
+    background-color #ffffff
+
+
+    .month
+      flex-grow: 1;
+      flex-shrink: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      flex-basis: 100px;
+
+      .month-name
+        text-transform: capitalize;
+        padding: 8px 0px;
+        text-align: center;
+        font-size: 15px;
+        @media screen and (max-width 1280px)
+          font-size 17px
+          padding: 8px 0px 15px 0px;
+
+      .month-header
+        display flex
+        justify-content: space-around;
+
+
+        &__days-week-name
+          font-size 12px
+          @media screen and (max-width 1280px)
+            font-size 14px
+
+      .month-days
+        display flex
+        flex-wrap wrap
+        margin-top 5px
+
+        &__value
+          color #656D78
+          width: 24px;
+          height: 24px;
+          text-align: center;
+          flex-grow: 1;
+          font-size: 13px;
+          line-height: 25px;
+          background: #F5F7FA;
+          border: 1px solid #fff;
+          @media screen and (max-width 1280px)
+            width: 40px;
+            height: 40px;
+            line-height 40px
+            font-size 15px
+          @media screen and (max-width 321px)
+            height 30px
+            width 30px
+            line-height 30px
+
+          &:hover
+            background #eee
+            cursor pointer
+
+        .empty
+          background #fff
+          cursor auto
+
+.active-calendar
+  display block
+  height: 242px;
+  z-index: 60
+  position: absolute;
+  padding: 15px;
+  width: 100%
+  background: #FFFFFF;
+  box-shadow: 0 1px 8px 0 rgba(0,44,92,0.28);
+  border-radius: 4px;
+  top 100%
+  left 0
+  @media screen and (max-width 1280px)
+    height 330px!important
+    width 100% !important
+    overflow hidden !important
+  @media screen and (min-width 341px) and (max-width 1280px)
+    width 339px!important
+    min-width 339px
+  @media screen and (max-width 321px)
+    height 300px!important
+  .app-calendar-main__container
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    @media screen and (max-width 1280px)
+      overflow-x scroll
+      overflow-y hidden
+
+
+  .now-month
+    .now-day
+      background-color #c9e9ff
+      font-family HelveticaNeue-Bold
+
+.select-date
+  background #ffff00!important

@@ -1,0 +1,50 @@
+<div class="app-event-in-room__room-description {{if mobileSwipe 'app-event-in-room__room-description__mobile-swipe'}}" style={{leftTitle}}>
+  <div class="room-title">
+    {{title}}
+  </div>
+  <div class="room-capacity">
+    {{app-pluralize capacity 'человек'}}
+  </div>
+</div>
+<div class="app-event-in-room__room-events">
+  <div class="room-events-cells">
+    {{#each eventsCells as |cell index|}}
+      <div class="event-cell {{if cell.isFree 'free-cell' 'busy-cell'}}"
+           id="{{unless cell.isFree (concat 'event-' cell.id)}}"
+           style = {{cell.widthCell}}
+           >
+           {{#if cell.isFree}}
+            {{#link-to 'create' (query-params timeStart=cell.queryTimeStart
+                                timeEnd=cell.queryTimeEnd
+                                date = selectDate
+                                roomId = roomId)
+                                  }}
+              <span onmouseEnter = {{action 'mouseEnterCell'}} onmouseLeave = {{action 'mouseLeaveCell'}}>+</span>
+            {{/link-to}}
+           {{/if}}
+      </div>
+      {{#unless cell.isFree}}
+        {{#tooltip-on-element event='click'
+                              side='bottom'
+                              enableLazyRendering=false
+                              target=(concat '#event-' cell.id)
+                              class = 'tooltip-on-element__event-in-room'
+                              as |tooltip|
+                              }}
+          <div class="title">
+            {{cell.title}}
+          </div>
+          <div class="room-and-date">
+            <span class="date">{{moment-format cell.dateStart 'DD MMMM, HH:mm'}}&nbsp;-&nbsp;{{moment-format cell.dateEnd 'HH:mm'}}</span><span class="room">&nbsp;&sdot;&nbsp;{{title}}</span>
+          </div>
+          <div class="users">
+              <span>{{app-user-view user=cell.users.firstObject }}</span>
+              <span class="users-info">{{#if cell.countUsers}} &nbsp;и&nbsp;{{app-pluralize cell.countUsers 'участник'}}{{/if}}</span>
+          </div>
+          <div class="event-edit element-edit" onmouseup= {{action 'mouseEnterEdit'}} onmousedown= {{action 'mouseLeaveEdit'}} onclick= {{action 'editEvent' cell.id}}>
+          </div>
+        {{/tooltip-on-element}}
+      {{/unless}}
+    {{/each}}
+  </div>
+</div>
