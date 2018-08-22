@@ -1,0 +1,20 @@
+mutation changeEventRoom($id: ID!, $roomId: ID!){
+  changeEventRoom(id: $id, roomId: $roomId){
+    id
+    title
+    dateStart
+    dateEnd
+    users{
+      id
+      login
+      homeFloor
+      avatarUrl
+    }
+    room{
+      id
+      title
+      capacity
+      floor
+    }
+  }
+}

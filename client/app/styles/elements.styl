@@ -1,0 +1,379 @@
+.button
+  text-align center
+  border-radius 4px
+  padding 10px 16px
+  display inline-block
+  text-decoration none
+  font-family 'HelveticaNeue-Medium'
+  font-size 13px
+  color #FFFFFF
+  letter-spacing 0;
+  word-spacing 3px
+  line-height 16px
+  cursor pointer
+  @media screen and (max-width 1280px)
+    height 44px
+    padding 12px 24px
+    font-size 15px
+    line-height 18px
+
+  &-blue
+    background-color #007DFF
+
+    &:hover
+      background #0059FF
+
+    &:active
+      background rgba(11,0,255,0.80)
+
+  &-gray
+    background: #E9ECEF;
+    color #000
+
+    &:hover
+      background: rgba(0,16,33,0.05);
+
+    &:active
+      background: rgba(4,29,56,0.14);
+
+  &-disabled
+    background: #E2E5E8;
+    color: rgba(0,0,0,0.20);
+
+.arrow
+  &-left
+    border-radius 50%
+    background-color #E9ECEF
+    background-image url('../images/arrow-left.svg')
+    background-repeat no-repeat
+    background-position 7px 6px
+    cursor pointer
+    height 24px
+    width 24px
+    @media screen and (max-width 1280px)
+      height 36px
+      width 36px
+      background-position 10px 8px
+      background-size 11px
+      margin-left 16px
+
+  &-right
+    border-radius 50%
+    background-color #E9ECEF
+    background-image url('../images/arrow-right.svg')
+    background-repeat no-repeat
+    background-position 10px 6px
+    cursor pointer
+    height 24px
+    width 24px
+    @media screen and (max-width 1280px)
+      height 36px
+      width 36px
+      background-position 14px 8px
+      background-size 11px
+      margin-right 16px
+
+.ember-tooltip-or-popover-enabled
+  z-index: 200
+  background #99A9B9
+
+.tooltip-on-element__event-in-room
+  background: #FFFFFF;
+  box-shadow: 0 1px 16px 0 rgba(0,44,92,0.28);
+  border-radius: 8px;
+  text-shadow none
+  border none
+  padding-left: 16px
+  padding-bottom: 16px
+  max-width: none;
+  width: 338px
+  pointer-events: auto;
+  margin-top: -13px!important;
+  @media screen and (max-width 1280px)
+    width 100%
+
+  .title
+    font-family: HelveticaNeue-Bold;
+    font-size: 15px;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: 24px;
+    padding-top: 14px
+    @media screen and (max-width 1280px)
+      font-size 20px
+
+  .room-and-date
+    font-family: HelveticaNeue;
+    font-size: 13px;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: 17px;
+    @media screen and (max-width 1280px)
+      font-size 15px
+
+  .users
+    padding-top: 16px
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    .users-info
+      font-family: Helvetica;
+      font-size: 13px;
+      color: #37003E;
+      letter-spacing: 0;
+      line-height: 17px;
+      @media screen and (max-width 1280px)
+        font-size 15px
+
+  .event-edit
+    position absolute
+    right 8px
+    top 8px
+    width 24px
+    height 24px
+    background-color: #E9ECEF;
+    border-radius: 50px;
+    text-decoration none
+    pointer-events auto
+
+.element-close
+  background-image url('../images/close.svg');
+  background-repeat no-repeat
+  background-position center
+  background-size: inherit;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+  @media screen and (max-width 1280px)
+    width: 12px;
+    height: 12px;
+
+.element-input
+  background: #FFFFFF;
+  border: 2px solid #E9ECEF;
+  border-radius: 4px;
+  height 38px
+  font-family: HelveticaNeue !important
+  font-size: 13px;
+  color: #000000;
+  letter-spacing: 0.47px;
+  padding 10px
+  width 100%
+  @media screen and (max-width 1280px)
+    height 44px
+    font-size 15px
+    letter-spacing 0.55px
+
+  &:hover
+    border: 2px solid #007DFF;
+
+  &:active
+    border: 2px solid #007DFF;
+
+  &::-webkit-input-placeholder
+    font-family: HelveticaNeue;
+    font-size: 13px;
+    color: #858E98;
+    letter-spacing: 0.47px;
+    @media screen and (max-width 1280px)
+      font-size 15px
+      letter-spacing 0.55px
+
+  &::-moz-placeholder
+    font-family: HelveticaNeue;
+    font-size: 13px;
+    color: #858E98;
+    letter-spacing: 0.47px;
+    @media screen and (max-width 1280px)
+      font-size 15px
+      letter-spacing 0.55px
+
+  &:-moz-placeholder
+    font-family: HelveticaNeue;
+    font-size: 13px;
+    color: #858E98;
+    letter-spacing: 0.47px;
+    @media screen and (max-width 1280px)
+      font-size 15px
+      letter-spacing 0.55px
+
+  &:-ms-input-placeholder
+    font-family: HelveticaNeue;
+    font-size: 13px;
+    color: #858E98;
+    letter-spacing: 0.47px;
+    @media screen and (max-width 1280px)
+      font-size 15px
+      letter-spacing 0.55px
+
+  &:focus
+    border: 2px solid #007DFF;
+    outline none!important
+
+    &::-webkit-input-placeholder
+      color transparent
+
+    &::-moz-placeholder
+      color transparent
+
+    &::-moz-placeholder
+      color transparent
+
+    &::-ms-input-placeholder
+      color transparent
+
+.element-edit{
+  background-image url('../images/edit.svg');
+  opacity: .43
+  background-repeat no-repeat
+  background-position center
+  background-size: inherit;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+.element-event
+  background: #E9ECEF;
+  border-radius: 4px;
+  height 37px
+  width 420px
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left 10px
+  @media screen and (max-width 1280px)
+    width 100%
+    height 44px
+
+
+  .event-time
+    font-family: HelveticaNeue-Bold;
+    font-size: 13px;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: 17px;
+    margin-right 16px
+    @media screen and (max-width 1280px)
+      font-size 15px
+      line-height 17px
+
+  .event-room
+    font-family: HelveticaNeue;
+    font-size: 13px;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: 17px;
+    @media screen and (max-width 1280px)
+      font-size 15px
+      line-height 17px
+      font-weidth 100
+
+.select-room
+  background-color #007DFF
+  position relative
+
+  .event-time
+    color #ffffff
+
+  .event-room
+    color #ffffff
+
+  .close-event
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    stroke-width: 0px;
+    stroke: currentColor;
+    fill: currentColor;
+    background-image url('../images/white-close.svg')!important
+    background-size: contain;
+    @media screen and (max-width 1280px)
+      width: 12px;
+      height: 12px;
+      top 15px
+
+.recomendation-room
+  background: #E9ECEF;
+  border-radius: 4px;
+  margin-bottom 8px
+  cursor: pointer;
+
+  .event-time
+    font-family: HelveticaNeue-Bold;
+    font-size: 13px;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: 17px;
+    @media screen and (max-width 1280px)
+      font-size 15px
+
+  .event-room
+    font-family: HelveticaNeue;
+    font-size: 13px;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: 17px;
+    @media screen and (max-width 1280px)
+      font-size 15px
+
+.modal-dialog-create
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  &__image
+    background-image url('../images/create-modal.svg')
+    background-size: 35px 40px;
+    background-repeat no-repeat
+    background-position center
+    width 40px
+    height 40px
+
+    &-remove
+      background-image url('../images/remove-modal.svg')
+      background-size: 35px 40px;
+      background-repeat no-repeat
+      background-position center
+      width 40px
+      height 40px
+
+  &__header
+    font-family: HelveticaNeue-Bold;
+    font-size: 20px;
+    margin 16px 0 8px 0
+    color: #000000;
+    letter-spacing: 0;
+    line-height: 24px;
+    text-align center
+    @media screen and (max-width 1280px)
+      margin-bottom 0
+
+  &__date
+    font-family: HelveticaNeue;
+    font-size: 15px;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: 17px;
+    margin-bottom 6px
+
+  &__room
+    font-family: HelveticaNeue;
+    font-size: 15px;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: 17px;
+
+
+.only-mobile
+  display none
+  @media screen and (max-width 1280px)
+    display inline
+    font-family: HelveticaNeue-Bold;
+    font-size: 13px;
+    color: #000;
+    letter-spacing: 0;

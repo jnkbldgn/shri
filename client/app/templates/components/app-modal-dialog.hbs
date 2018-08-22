@@ -1,0 +1,18 @@
+{{#if insertModel}}
+<div class="app-modal-dialog__dialog">
+  {{yield}}
+  <div class="dialog-buttons">
+    {{#if buttons.length}}
+    {{#each buttons as |button|}}
+      <div class={{button.class}} {{action 'clickButton' button.callBack}} >
+        {{button.name}}
+      </div>
+    {{/each}}
+    {{else}}
+      <div class="button button-blue" {{action 'clickButton'}}>
+        Хорошо
+      </div>
+    {{/if}}
+  </div>
+</div>
+{{/if}}

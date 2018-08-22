@@ -1,0 +1,38 @@
+
+<div class="app-calendar-main__months">
+  <div class="app-calendar-main__container">
+    {{#each calendarObject as |month index|}}
+
+      <div class="month">
+        <div class="month-name">
+          {{moment-format month.date 'MMMM'}}
+        </div>
+        <div class="month-header">
+          {{#each daysWeekName as |day|}}
+            <div class="month-header__days-week-name">
+              {{day}}
+            </div>
+          {{/each}}
+      </div>
+      <div class="month-days {{if (eq index 0) 'now-month'}}">
+        {{#each (range 0 month.firstDayOfWeek) as |value|}}
+          <div class="month-days__value empty">
+          </div>
+        {{/each}}
+        {{#each (range 1  month.lengthMonth) as |value index|}}
+          <div class="month-days__value {{if (eq value month.nowDate) 'now-day'}}" onclick ={{action 'activeDate'}} {{action 'selectDateInCalendar' value month.date}}>
+            {{value}}
+          </div>
+        {{/each}}
+        {{#each (range month.lastDayOfWeek daysWeekName.length) as |value|}}
+          <div class="month-days__value empty">
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    {{/each}}
+  </div>
+  <div class="app-calendar-main__close element-close" onclick ={{action 'closeCalendar'}}>
+  </div>
+</div>

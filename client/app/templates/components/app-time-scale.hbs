@@ -1,0 +1,7 @@
+<div class="app-time-scale">
+  {{#each scaleValues as |value index|}}
+    <div class="app-time-scale__value">
+      {{value}}{{#unless index }}:00{{/unless}}
+    </div>
+  {{/each}}
+</div>
